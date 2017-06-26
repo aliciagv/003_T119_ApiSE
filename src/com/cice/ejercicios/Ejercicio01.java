@@ -15,6 +15,25 @@ public class Ejercicio01 {
     
     String cadena="Esto es una cadena de caracteres con muchas vocales";
     int count=0;
+    
+    char[] arraydecaracteres=cadena.toCharArray();
+    
+    for (char caracter: arraydecaracteres){
+        switch (caracter){
+             case 'a':
+             case 'e':
+             case 'i':
+             case 'o':
+             case 'u':
+                count ++;
+               
+        
+        } 
+    
+    }
+     System.out.println("El número de vocales contado con array de caracteres es: " + count);
+     count=0;
+    // otra forma
     for (int i=0; i<cadena.length(); i ++){
         char c= cadena.charAt(i);
         switch (cadena.charAt(i)){
