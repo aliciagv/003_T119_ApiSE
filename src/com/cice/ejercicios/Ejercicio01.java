@@ -35,8 +35,8 @@ public class Ejercicio01 {
      count=0;
     // otra forma
     for (int i=0; i<cadena.length(); i ++){
-        char c= cadena.charAt(i);
-        switch (cadena.charAt(i)){
+          
+        switch (cadena.toLowerCase().charAt(i)){
             case 'a':
                 count ++;
                 break;
