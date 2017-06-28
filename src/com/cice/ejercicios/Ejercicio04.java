@@ -18,6 +18,11 @@ public class Ejercicio04 {
         for (String acadena: arrayString){
             System.out.print(acadena + "\\ ");
         }
+        
+       // StringBuilder sbcadena= new StringBuilder("Texto donde se insertarán espacios");
+       
+        
+        
     
     
     }
