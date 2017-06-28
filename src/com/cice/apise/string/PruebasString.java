@@ -58,6 +58,16 @@ public class PruebasString {
         }
         System.out.println(pos);
         
+        String cadena="acilia@gmail.com";
+        int ps=cadena.indexOf("@");
+        System.out.println("La posicion del @ es: "+ ps);
+        System.out.println(cadena.substring(++ps));
+        System.out.println(cadena.substring(0, --ps));
+        
+        System.out.println(cadena.replace('a', 'e'));
+        
+        
+        
         
         
         
