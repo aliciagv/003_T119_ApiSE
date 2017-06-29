@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ dada una determinada cadena de caracteres, se inserte una barra / adicional entre palabras.
+Mediante el método indexOf() se irán buscando las posiciones donde se encuentran los espacios
+para insertar el espacio adicional, operación esta que será́realizada a través del método insert().
  */
 package com.cice.ejercicios;
 
@@ -13,13 +13,19 @@ public class Ejercicio04 {
     
     public static void main(String[] args){
         
-        String cadena="Texto donde se insertarán espacios";
-        String[] arrayString=cadena.split(" ");
-        for (String acadena: arrayString){
-            System.out.print(acadena + "\\ ");
-        }
-        
-       // StringBuilder sbcadena= new StringBuilder("Texto donde se insertarán espacios");
+        StringBuilder stb= new StringBuilder("Texto donde se insertarán espacios");
+        int pos=0;
+        do {
+            pos= stb.indexOf(" ",pos);
+            if (pos!=-1){
+                System.out.println("Posición: "+pos);
+                stb.insert(pos , "/");
+                pos=pos+2;
+            } 
+        } while (pos!=-1);
+                
+        System.out.println(stb.toString());
+
        
         
         
