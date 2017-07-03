@@ -34,9 +34,18 @@ public class Ejercicio05 {
          //Math.random()*6     Esto da valores de 0.0 a 6.0, excluido el 6.0
         //Para 0 a 100
         
-//        int valorEntero= Math.floor(Math.random()*(N-M+1)+M);
+//        int valorEntero= Math.floor(Math.random()*(N-M+1)+M); Entre N y M
         int ale0100_1= (int) Math.floor(Math.random()*(100-0+1)+0);
         int ale0100_2= (int) Math.floor(Math.random()*(100-0+1)+0);
+        min=Math.min(aleatorio1, aleatorio2);
+        max=Math.max(aleatorio1,aleatorio2);
+        suma=0;
+        for (int i=min; i<=max; i++){
+            suma+=i;
+            
+        }
+        System.out.println("La suma desde el "+ min + " hasta el "+ max + " es: "+ suma);
+        
         
         
     }
