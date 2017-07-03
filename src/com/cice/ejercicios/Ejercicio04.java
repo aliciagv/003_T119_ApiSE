@@ -13,7 +13,8 @@ public class Ejercicio04 {
     
     public static void main(String[] args){
         
-        StringBuilder stb= new StringBuilder("Texto donde se insertarán espacios");
+        StringBuilder stb= new StringBuilder();
+        stb.append("Texto donde se insertarán espacios");
         int pos=0;
         do {
             pos= stb.indexOf(" ",pos);
@@ -23,7 +24,8 @@ public class Ejercicio04 {
                 pos=pos+2;
             } 
         } while (pos!=-1);
-                
+       
+               
         System.out.println(stb.toString());
 
        
