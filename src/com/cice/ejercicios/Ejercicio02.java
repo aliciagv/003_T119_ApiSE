@@ -13,15 +13,16 @@ package com.cice.ejercicios;
 public class Ejercicio02 {
     
     public static void main (String... args){
-    String cadenalarga=null;
-    int contador=0;
-    for (String entrada: args){
-        if (entrada.length() > contador){
-        contador=entrada.length();
-        cadenalarga=entrada;
+        int contador=0;
+        String cadenamaslarga=null;
+        for(String argumentos:args) {
+            if (argumentos.length()>contador){
+                cadenamaslarga=argumentos;
+                contador=argumentos.length();
+            }
         }
-    }
-    System.out.println("La cadena más larga que ha entrado es: " + cadenalarga);
+        System.out.println("La cadena más larga es: " + cadenamaslarga + " con tamaño " + contador );
+        
     }
     
 }
