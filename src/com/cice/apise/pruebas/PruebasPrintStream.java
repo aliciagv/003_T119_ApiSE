@@ -7,7 +7,11 @@ package com.cice.apise.pruebas;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintStream;
+
+
+
 
 /**
  *
@@ -16,17 +20,34 @@ import java.io.PrintStream;
 public class PruebasPrintStream {
 
     public static void main(String[] args) {
+       
         
-        outfileexit();
-        outfilenotexit();
+        if (exit()){
+            System.out.print("Existe");
+            
+             outfileexit();
+        
+        } else {
+             System.out.print("No existe");
+             outfilenotexit();
+        }
     }
 
+    private static boolean exit(){
+        try {
+            FileReader fr =new FileReader("/Users/cice/NetBeansProjects/003_T119_ApiSE/ficheros/fichero000escritura.txt");
+            return true;
+        } catch (FileNotFoundException ex) {
+           return false;
+        }
+    
+    }
     private static void outfileexit() {
         
         try {
          
             
-            PrintStream ps = new PrintStream("/Users/cice/NetBeansProjects/003_T119_ApiSE/ficheros/ficheroescritura.txt");
+            PrintStream ps = new PrintStream("/Users/cice/NetBeansProjects/003_T119_ApiSE/ficheros/fichero000escritura.txt");
             ps.println("Introducimos esta cadena de caracteres en el fichero");
             ps.close();
 
