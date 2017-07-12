@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cice.apise.string;
+package com.cice.apise.pruebas;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -26,9 +26,12 @@ public class PruebasBufferedReaderFile {
             fr =new FileReader("/Users/cice/NetBeansProjects/003_T119_ApiSE/ficheros/ficheroesrdditura.txt");
             bf = new BufferedReader(fr);
             String lectura=null;
+            StringBuilder sb= new StringBuilder();
             while ((lectura=bf.readLine())!=null) {
-                System.out.println(lectura);
+                sb.append(lectura);
             }
+            
+            System.out.println(sb);
              
                 
         } catch (FileNotFoundException ex) {
