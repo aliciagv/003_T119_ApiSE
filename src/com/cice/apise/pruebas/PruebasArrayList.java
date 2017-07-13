@@ -12,7 +12,7 @@ import java.util.Vector;
  *
  * @author cice
  */
-public class PruebasColecciones {
+public class PruebasArrayList {
 
     public static void main(String[] args) {
 
