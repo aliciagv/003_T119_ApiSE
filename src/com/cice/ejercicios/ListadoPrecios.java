@@ -13,33 +13,29 @@ import java.util.ArrayList;
  */
 public class ListadoPrecios {
     
-   private ArrayList<Integer> listadoprecios = new ArrayList<Integer>();
+   private ArrayList<Double> listadoprecios = new ArrayList<>();
     
     public boolean isEmpty(){
         return listadoprecios.isEmpty();
     }
     
-    public void nuevoPrecio(int precio) {
+    public void nuevoPrecio(double precio) {
         listadoprecios.add(precio);
     }
 
-    public Integer preciomax() {
-        Integer max = Integer.MIN_VALUE;
-        for (Integer i : listadoprecios) {
-            if (i > max) {
-                max = i;
-            }
+    public double preciomax() {
+        double max = Integer.MIN_VALUE;
+        for (Double i : listadoprecios) {
+           max=Math.max(max, i);
 
         }
         return max;
     }
 
-    public Integer preciomin() {
-        Integer min = Integer.MAX_VALUE;
-        for (Integer i : listadoprecios) {
-            if (i < min) {
-                min = i;
-            }
+    public double preciomin() {
+        double min = Integer.MAX_VALUE;
+        for (Double i : listadoprecios) {
+           min=Math.min(min, i);
 
         }
         return min;
@@ -48,8 +44,8 @@ public class ListadoPrecios {
 
     public double preciomedio() {
 
-        int suma = 0;
-        for (Integer i : listadoprecios) {
+        double suma= 0;
+        for (Double i : listadoprecios) {
             suma = suma + i;
         }
         return suma / listadoprecios.size();

@@ -22,15 +22,18 @@ public class HashContactos {
         contactos.put(dni,nombre);
     }
     
-    public void eliminarcontacto(Integer dni){
-        contactos.remove(dni);
+    public String eliminarcontacto(Integer dni){
+        return (String)contactos.remove(dni);
+        
+        
     
     }
     public void mostarcontactos(){
-        Enumeration econtacto=contactos.elements();
         
-        while (econtacto.hasMoreElements()){
-            System.out.println(econtacto.nextElement());
+        Enumeration keycontacto=contactos.keys();
+        while (keycontacto.hasMoreElements()){
+            Integer key=(Integer)keycontacto.nextElement();
+            System.out.println( key +" "+ contactos.get(key));
         }
     }
 }

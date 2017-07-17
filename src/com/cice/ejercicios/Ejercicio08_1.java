@@ -29,69 +29,76 @@ import java.util.Scanner;
  */
 public class Ejercicio08_1 {
 
-    static ArrayList<Integer> listadoprecios = new ArrayList<Integer>();
+    static ListadoPrecios listadoprecios = new ListadoPrecios();
 
     public static void main(String[] args) {
-        int opcion = 6;
-        ListadoPrecios listadoprecios=new ListadoPrecios();
-                
-                
+        int opcion = 0;
+        
+
         do {
-            System.out.println("=======MENU======");
+            System.out.println("=================================MENU==========================");
+            System.out.println("===============================================================");
+            System.out.println("");
             System.out.println("1. Nuevo precio");
             System.out.println("2. Precio medio");
             System.out.println("3. Precio máximo");
             System.out.println("4. Precio mínimo");
             System.out.println("5. Mostrar todos los precios");
             System.out.println("6. Salir");
-            System.out.println("Elige una opción");
+            System.out.print("Elige una opción");
             Scanner sc = new Scanner(System.in);
+            if (sc.hasNextInt()) {
+                opcion = sc.nextInt();
+                switch (opcion) {
+                    case 1:
+                        System.out.print("Introduce un precio a añadir: ");
 
-            opcion = sc.nextInt();
-            switch (opcion) {
-                case 1:
-                    System.out.print("Introduce un precio a añadir: ");
-                    int precio = sc.nextInt();
-                    listadoprecios.nuevoPrecio(precio);
-                    break;
-                case 2:
-                    if (!listadoprecios.isEmpty()) {
-                        System.out.println("El precio medio es: "+listadoprecios.preciomedio());
-                    } else {
-                        System.out.println("El listado esta vacío, no se puede calcular el precio medio");
-                    }
+                        if (sc.hasNextDouble()) {
+                            double precio = sc.nextDouble();
+                            listadoprecios.nuevoPrecio(precio);
+                        } else {
+                            System.out.println("Debe introducir un número");
+                        }
+                        break;
+                    case 2:
+                        if (!listadoprecios.isEmpty()) {
+                            System.out.println("El precio medio es: " + listadoprecios.preciomedio());
+                        } else {
+                            System.out.println("El listado esta vacío, no se puede calcular el precio medio");
+                        }
 
-                    break;
-                case 3:
-                    if (!listadoprecios.isEmpty()) {
-                          System.out.println("El precio máximo es: "+listadoprecios.preciomax());
-                    } else {
-                        System.out.println("El listado esta vacío, no se puede calcular el precio máximo");
-                    }
-                    break;
-                case 4:
+                        break;
+                    case 3:
+                        if (!listadoprecios.isEmpty()) {
+                            System.out.println("El precio máximo es: " + listadoprecios.preciomax());
+                        } else {
+                            System.out.println("El listado esta vacío, no se puede calcular el precio máximo");
+                        }
+                        break;
+                    case 4:
 
-                    if (!listadoprecios.isEmpty()) {
-                            System.out.println("El precio máximo es: "+listadoprecios.preciomin());
-                    } else {
-                        System.out.println("El listado esta vacío, no se puede calcular el precio mínimo");
-                    }
-                    break;
-                case 5:
-                       listadoprecios.mostrarprecios();
-                    break;
-                case 6:
-                    System.out.print("Salimos");
-                    break;
-                default:
-                    System.out.println("La opcion seleccionada no es valida");
+                        if (!listadoprecios.isEmpty()) {
+                            System.out.println("El precio máximo es: " + listadoprecios.preciomin());
+                        } else {
+                            System.out.println("El listado esta vacío, no se puede calcular el precio mínimo");
+                        }
+                        break;
+                    case 5:
+                        listadoprecios.mostrarprecios();
+                        break;
+                    case 6:
+                        System.out.print("Salimos");
+                        break;
+                    default:
+                        System.out.println("La opcion seleccionada no es valida");
 
+                }
+            } else {
+                System.out.println("Debe introducir un número");
             }
 
         } while (opcion != 6);
 
     }
 
-
-    
 }
