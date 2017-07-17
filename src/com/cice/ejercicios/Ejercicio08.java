@@ -31,18 +31,20 @@ public class Ejercicio08 {
 
     static ArrayList<Double> listadoprecios = new ArrayList<Double>();
     static Scanner sc = new Scanner(System.in);
+    static int opcion = 0;
+    
+    
     public static void main(String[] args) {
-        int opcion = 0;
         
-
         do {
             mostrarMenu();
-            if (sc.hasNextInt()) {
+           /* if (sc.hasNextInt()) {*/
                 opcion = sc.nextInt();
                 opcionElegida(opcion);
-            } else {
+            /*} else {
+                 System.out.println("===============================================================");
                 System.out.println("Debe introducir un número");
-            }
+            }*/
         } while (opcion != 6);
 
     }
@@ -64,12 +66,12 @@ public class Ejercicio08 {
         switch (opcion) {
                     case 1:
                         System.out.print("Introduce un precio a añadir: ");
-                        if (sc.hasNextDouble()) {
+                        /*if (sc.hasNextDouble()) {*/
                             double precio = sc.nextDouble();
                             nuevoPrecio(precio);
-                        } else {
+                       /* } else {
                             System.out.println("Debe introducir un número");
-                        }
+                        }*/
                         break;
 
                     case 2:
