@@ -20,7 +20,6 @@ código y hacerlo mas estructurado.
  */
 package com.cice.ejercicios;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
