@@ -3,6 +3,8 @@ package com.cice.ejercicios;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Set;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -30,10 +32,27 @@ public class HashContactos {
     }
     public void mostarcontactos(){
         
-        Enumeration keycontacto=contactos.keys();
-        while (keycontacto.hasMoreElements()){
+        Enumeration<Integer> keycontacto=contactos.keys();
+        
+        /*while (keycontacto.hasMoreElements()){
             Integer key=(Integer)keycontacto.nextElement();
             System.out.println( key +" "+ contactos.get(key));
-        }
+        }*/
+        
+    
+        /*Iterator<Integer> lconta=contactos.keySet().iterator();
+          while(lconta.hasNext()){
+            Integer clave = lconta.next();
+            System.out.println(clave + " - " + contactos.get(clave));
+            }
+          */  
+            
+         /*  contactos.forEach((a,b)->{
+               System.out.println(a + " "+ b);
+           
+           });*/
+           
+           contactos.forEach((a,b)-> System.out.println(a + " "+ b));
+     
     }
 }
