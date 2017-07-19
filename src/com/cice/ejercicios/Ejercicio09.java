@@ -32,7 +32,7 @@ public class Ejercicio09 {
                         borrarContactos(sc);
                         break;
                     case 3:
-                        mostrarContactos(contactos);
+                        mostrarContactos();
                         break;
                     default:
 
@@ -94,7 +94,7 @@ public class Ejercicio09 {
 
     }
 
-    private static void mostrarContactos(HashContactos contactos) {
+    private static void mostrarContactos() {
 
         contactos.mostarcontactos();
     }
