@@ -12,17 +12,39 @@ import java.util.Scanner;
  * @author cice
  */
 public class Ejercicio09 {
-    
-    static HashContactos contactos= new HashContactos();
-    public static void main(String[] args){
-    
-    Scanner sc= new Scanner(System.in);
-    
-    int opcion=0;
-    
-       
-    do {
-    
+
+    static HashContactos contactos = new HashContactos();
+
+    public static void main(String[] args) {
+
+        int opcion = 0;
+
+        do {
+            mostarMenu();
+            Scanner sc = new Scanner(System.in);
+            if (sc.hasNextInt()) {
+                opcion = sc.nextInt();
+                switch (opcion) {
+                    case 1:
+                        addContactos();
+                        break;
+                    case 2:
+                        borrarContactos(sc);
+                        break;
+                    case 3:
+                        mostrarContactos(contactos);
+                        break;
+                    default:
+
+                }
+            } else {
+                System.out.println("===============================================================");
+                System.out.println("Debe introducir un número del menú");
+            }
+        } while (opcion != 4);
+    }
+
+    private static void mostarMenu() {
         System.out.println("========== Menú de la aplicación ========");
         System.out.println("=========================================");
         System.out.println("");
@@ -33,51 +55,48 @@ public class Ejercicio09 {
         System.out.println("");
         System.out.println("=========================================");
         System.out.println("Tu opción es: ");
-        opcion =sc.nextInt();
-        switch (opcion) {
-            case 1:
-                addContactos(sc);
-                break;
-            case 2:
-                borrarContactos(sc);
-             break;
-            case 3: 
-                mostrarContactos(contactos);
-                break;
-            default:
-                
-        }
-    } while (opcion!=4);
+
     }
-    
-    
-    
-    
-    private static void addContactos(Scanner sc){
-        System.out.println("Introduce el dni");
-        int dni=sc.nextInt();
-        System.out.println("Introduce el nombre");
-        String nombre=sc.next();
-        
-        contactos.addcontacto(dni, nombre);
-        
-        
+
+    private static void addContactos() {
+        boolean datosaddError = true;
+
+        do {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Introduce el dni");
+            if (sc.hasNextInt()) {
+                int dni = sc.nextInt();
+                System.out.println("Introduce el nombre");
+                String nombre = sc.next();
+                contactos.addcontacto(dni, nombre);
+                datosaddError = false;
+            } else {
+                System.out.println("Debe introducir un número");
+            }
+
+        } while (datosaddError);
+
     }
-    private static void borrarContactos(Scanner sc){
+
+    private static void borrarContactos(Scanner sc) {
         System.out.println("Introduce el dni a borrar");
-        int dni=sc.nextInt();
-        String borrado= contactos.eliminarcontacto(dni);
-        if (borrado==null){
-            System.out.println("El elemento que quiere borrar no existe");
+        if (sc.hasNextInt()) {
+            int dni = sc.nextInt();
+            String borrado = contactos.eliminarcontacto(dni);
+            if (borrado == null) {
+                System.out.println("El elemento que quiere borrar no existe");
+            } else {
+                System.out.println("El elemento " + borrado + "ha sido eliminado");
+            }
         } else {
-            System.out.println("El elemento "+borrado +"ha sido eliminado");
+            System.out.println("Debe introducir un número");
         }
-        
-        
-    }private static void mostrarContactos(HashContactos contactos){
-     
-         contactos.mostarcontactos();
+
     }
- 
-    
+
+    private static void mostrarContactos(HashContactos contactos) {
+
+        contactos.mostarcontactos();
+    }
+
 }
