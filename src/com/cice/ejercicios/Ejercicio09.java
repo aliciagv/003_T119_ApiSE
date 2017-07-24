@@ -14,7 +14,6 @@ import java.util.Scanner;
 public class Ejercicio09 {
 
     static HashContactos contactos = new HashContactos();
-
     public static void main(String[] args) {
 
         int opcion = 0;
